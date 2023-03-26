@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "turismuri_externes",
+  "info": {
+    "singularName": "turismuri-externe",
+    "pluralName": "turismuri-externes",
+    "displayName": "Turismuri Externe",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Denumire": {
+      "type": "string"
+    },
+    "Poza": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "turismuri_internes",
+  "info": {
+    "singularName": "turismuri-interne",
+    "pluralName": "turismuri-internes",
+    "displayName": "Turismuri Interne",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Denumire": {
+      "type": "string"
+    },
+    "Poza": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}
