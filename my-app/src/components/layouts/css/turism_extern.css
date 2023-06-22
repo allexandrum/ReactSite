@@ -35,10 +35,9 @@ section#teheader header span{
 section#temain{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+
     column-gap: 25px;
     row-gap: 50px;
-    height: 2400px;
     padding-left: 50px;
     padding-right: 50px;
 }

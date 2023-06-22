@@ -41,6 +41,7 @@
 #email-subscribe input, button {
     border: 1px solid #F42D59;
     height: 40px;
+    font-family: Nunito;
 }
 
 #email-subscribe ::placeholder {

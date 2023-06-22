@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 const TourismE = () => {
   const [error, setError] = useState(null);
   const [etourisms, setEtourisms] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     axios
@@ -13,6 +14,26 @@ const TourismE = () => {
       .then(({ data }) => setEtourisms(data.data))
       .catch((error) => setError(error));
   }, []);
+
+  const handleSearch = () => {
+    if (searchTerm === "") {
+      // If search term is empty, show all items
+      axios
+        .get("http://localhost:1337/api/turismuri-externes?populate=Poza")
+        .then(({ data }) => setEtourisms(data.data))
+        .catch((error) => setError(error));
+    } else {
+      // Filter itourisms based on search term
+      const filteredItourisms = etourisms.filter(({ attributes }) =>
+        attributes.Denumire.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      setEtourisms(filteredItourisms);
+    }
+  };
+
+  const handleInputChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
 
   if (error) {
     // Print errors if any
@@ -25,6 +46,20 @@ const TourismE = () => {
             <p>Călătoriile internaționale ce le poate oferi <span>Jauntie</span></p>
             <hr/>
         </header>
+      </section>
+      
+      <section id="searchbar">
+        <div id="divSB">
+          <input
+            type="text"
+            placeholder="Găsește turismul potrivit ție"
+            value={searchTerm}
+            onChange={handleInputChange}
+          />
+          <button type="submit" name="button" onClick={handleSearch}>
+            Caută
+          </button>
+        </div>
       </section>
       <section id="temain">
         {etourisms.map(({ id, attributes }) => (

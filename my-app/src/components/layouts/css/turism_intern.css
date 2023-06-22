@@ -31,14 +31,53 @@ section#tiheader header span{
     color: #F42D59;
 }
 
+#divSB {
+    position: relative;
+    left: 638px;
+    bottom: 50px;
+}
+
+#divSB input {
+    padding-left: 10px;
+    width: 413px;
+    background: #FFFFFF;
+    box-sizing: border-box;
+}
+
+#divSB button {
+    position: absolute;
+    width: 150px;
+    font-size: 16px;
+    color: white;
+    background-color: #F42D59;
+}
+
+#divSB input, button {
+    border: 1px solid #F42D59;
+    height: 40px;
+    font-family: Nunito;
+}
+
+#divSB ::placeholder {
+    color: #AFAFAF;
+    font-family: Nunito;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+#divSB input:focus{
+    background-color: #f2f2f2;
+    outline: none;
+}
+
+
+
 /*Section timain*/
 section#timain{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
     column-gap: 25px;
     row-gap: 50px;
-    height: 1200px;
     padding-left: 50px;
     padding-right: 50px;
 }
